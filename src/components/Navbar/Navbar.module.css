@@ -2,14 +2,17 @@
     grid-area: n;
     background-color: rgb(197, 244, 216);
     padding: 20px;
-  }
+}
 
-  .item a {
-   color: white;
-   text-decoration: none;
-  }
+.item {
+    color: white;
+    text-decoration: none;
+}
 
-  .item .active{
+.active {
     color: gold;
-  }
+}
 
+.nav a:focus {
+    color: gold;
+}

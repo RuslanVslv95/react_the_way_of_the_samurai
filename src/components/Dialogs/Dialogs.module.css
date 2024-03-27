@@ -3,7 +3,15 @@
     grid-template-columns: 2fr 10fr;
 }
 
+.dialog img {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    padding: 10px 10px 10px 10px;
+}
+
 .dialogsItems  {
+
     padding: 10px;
     color: white;
 }
@@ -13,7 +21,7 @@
 }
 
 .dialog {
-
+    
 }
 .messages {
     padding: 10px;

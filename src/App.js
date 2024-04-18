@@ -10,7 +10,7 @@ import News from './components/News/News'
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import state from './redux/state';
+// import state, { addPost } from './redux/state';
 
 
 function App(props) {
@@ -23,7 +23,7 @@ function App(props) {
             <div className='app-wrapper-content'>
                 <Routes>
                     <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} />} />
-                    <Route path='/profile' element={<Profile state={props.state.profilePage} />} />
+                    <Route path='/profile' element={<Profile state={props.state.profilePage} addPost={props.addPost}/>} />
                     <Route path='/friends' element={<Friends state={props.state.sidebar} />} />
                     <Route path='/news' element={<News />} />
                     <Route path='/music' element={<Music />} />

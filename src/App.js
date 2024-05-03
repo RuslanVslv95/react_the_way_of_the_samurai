@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useLayoutEffect } from 'react';
 import Header from './components/Header/Header';
@@ -22,10 +22,11 @@ function App(props) {
 
             <div className='app-wrapper-content'>
                 <Routes>
-                    <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} />} />
+                    <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} updateNewMessageText ={props.updateNewMessageText} />} />
                     <Route path='/profile' element={<Profile profilePage={props.state.profilePage}
                                                              addPost={props.addPost}
-                                                             updateNewPostText={props.updateNewPostText}/>} />
+                                                             updateNewPostText={props.updateNewPostText}/>}
+                                                             />
                     <Route path='/friends' element={<Friends state={props.state.sidebar} />} />
                     <Route path='/news' element={<News />} />
                     <Route path='/music' element={<Music />} />

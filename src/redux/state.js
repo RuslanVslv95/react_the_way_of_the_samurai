@@ -9,9 +9,12 @@ let state = {
             { id: 4, message: "Dada", likesCount: 11 }
          ],
         newPostText: 'it-kamasutra.com'
+        
     },
 
     dialogsPage: {
+        newMessageText: 'Введите сообщение',
+
         messages: [
             { id: 1, message: 'Hi' },
             { id: 2, message: 'How is your it-kamasutra?' },
@@ -56,6 +59,11 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
 

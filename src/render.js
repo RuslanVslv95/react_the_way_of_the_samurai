@@ -5,16 +5,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import state from './redux/state';
 import { BrowserRouter } from 'react-router-dom';
-import { addPost, updateNewPostText } from './redux/state';
+import { addPost, updateNewPostText, updateNewMessageText } from './redux/state';
 
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 export let rerenderEntireTree = (state) => {
-  const root = ReactDOM.createRoot(document.getElementById('root'));
+  
   root.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App state={state} addPost={addPost} updateNewPostText={updateNewPostText} />
+        <App state={state} addPost={addPost} updateNewPostText={updateNewPostText} updateNewMessageText={updateNewMessageText}/>
       </BrowserRouter>
     </React.StrictMode>
   );

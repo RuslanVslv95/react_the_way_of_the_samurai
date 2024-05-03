@@ -3,6 +3,7 @@ import DialogItem from './Dialogitem/Dialogsitem';
 import Message from './Message/Message';
 import { NavLink } from "react-router-dom";
 import React from 'react';
+import { updateNewMessageText } from '../../redux/state';
 
 const Dialogs = (props) => {
 
@@ -13,7 +14,13 @@ const Dialogs = (props) => {
 
     let addMessage = () => {
         let contentMessage = textMessage.current.value;
-        alert(contentMessage)
+        
+    }
+
+    let onMessageChange = () => {
+        let text = textMessage.current.value;
+        props.updateNewMessageText(text)
+        
     }
 
     return (
@@ -28,7 +35,7 @@ const Dialogs = (props) => {
             </div>
 
             <div>
-                <textarea ref={textMessage}></textarea>
+                <textarea onChange={onMessageChange} ref={textMessage} value={props.state.newMessageText} ></textarea>
             </div>
             <div>
                 <button onClick={addMessage}>Send Message</button>
